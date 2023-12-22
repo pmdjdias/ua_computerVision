@@ -1,0 +1,6 @@
+p5:	 YUV – ver Color Picker – RGB ou HSV – Ver tambem decopose to layer YCbCr = YUV	
+p14:	Brithgness and contrast – color->Brightness & contrats
+p15:	hite balance: Color->auto->white balance (ver outras alternativas)
+p17:	Saturation: Tools->color->Hue->Saturation
+p21:	Gamma (um dos valores no color leve, Segundo valor é potencia do gamma)
+p22:	Sharpness:	Filter->Enhance->Sharpen (contrario de filter blur)
