@@ -22,4 +22,4 @@ Prof Paulo Dias
 * Using some materiass from\
 Prof<sup>a</sup>. Beatriz Sousa Santos - [contact](mailto:bss@ua.pt)\
 Prof. António Neves - [contact](mailto:an@ua.pt)\
-Prof. Joaquim Madeira - [contact](mailto:jmadeira@ua.pt)\
+Prof. Joaquim Madeira - [contact](mailto:jmadeira@ua.pt)
