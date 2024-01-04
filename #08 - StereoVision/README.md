@@ -8,12 +8,12 @@
 * Disparity map 
 * Dense mapping
 
-## Chessboard calibration
+## 8.1 - Chessboard calibration
 Compile and test the file `chessboard.py` (similar to the one used in the last lecture). This code detects corners in a chessboard pattern using openCV functions and shows the results of the detection for a series of images.
 Rename the file (`stereo_exe_1.py` for example) and modify the code to allow for detection of corners in a series of stereo pair images (use the provided right images with name `rightxx.jpg`). 
 Fill the necessary matrices with the correct value to calibrate the stereo pair. The objective is to define 3 matrices: `left_corners`, `right_cornes` and `objPoints` with, respectively, 2D pixel coordinates of the corners in the left and right image (2 coordinates per row), 3D point coordinates of the chessboard corner (3 coordinates per row).
 
-## Stereo Calibration
+## 8.2 - Stereo Calibration
 Calibrate the stereo pair using the function [cvStereoCalibrate](http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html)
 Use the default parameters presented in the documentation for the stereo calibration, except for the last parameter that you should set to `CV_CALIB_SAME_FOCAL_LENGTH`, meaning that the algorithm will consider the same focal length for both camera and that no guess is provided for the other parameters.
 After a successful calibration, save the matrices in a npz file using the file storage functions to avoid recalibration of the stereo rig each time.
@@ -29,10 +29,10 @@ Try to repeat the process with the other set of images available.
 ## Note
  Given the large number of parameters to be evaluated the stereo calibration process might not always give reliable results depending on the images. It is possible to ease the process by calibrating individually each camera (intrinsics and extrinsics parameters) with the function cvCalibrateCamera (see previous lecture) and indicate the stereo calibration algorithm to use these values as guess or as fixed by changing the last parameter of the function (`CV_CALIB_USE_INTRINSIC_GUESS` or `CV_CALIB_FIX_INTRINSIC`). 
 
-##	Lens distortion
+## 8.3 - Lens distortion
 In a new file, read the distortion parameters of the cameras (function `np.load`), select a stereo pair of images from the pool of calibration images and present the undistorted images (image with the lens distortion removed) using the function `cvUndistort` to compute the new images.
 
-## Epipolar Lines
+## 8.4 - Epipolar Lines
 Modify the previous example to show only the undistorted images. Add the possibility to select a pixel in each image using the following code to set a callback to be called for handling mouse events.
 ```html
 def mouse_handler(event, x, y, flags, params):
@@ -57,7 +57,7 @@ and define random colors:
 color = np.random.randint(0, 255, 3).tolist()
 ```
 
-## Image Rectification
+## 8.5 - Image Rectification
 Select a pair of stereo images and use the following OpenCV functions to generate the rectified images (corresponding epipolar lines in the same rows in both images):
 	`cvStereoRectify`: this function computes the rotation and projection matrices that transform both camera image plane into the same image plane, and thus with parallel epipolar lines. The size of the output matrices R1, R2, P1, P2 is respectively 3x3 and 3x4.
 	`cvinitUndistortRectifyMap`: This function computes the transformation (undistortion and rectification) between the original image and the rectified image. The output arrays mx1 and mx2 are a direct map between the two images, for each pixel in the rectified image, it maps the corresponding pixel in the original image.
@@ -86,7 +86,7 @@ Visualize the resulting images and draw lines in rows (for example at each 25 pi
 ## Optional
 Modify the code to make it interactive as in the Epipolat Line section. By clicking on a point in an image, the corresponding row will appear in the other image.
 
-##	Disparity Map 
+## 8.6 - Disparity Map 
 Use the class `StereoBM` and the function that implements a block matching technique (template matching will be explored later within this Computer Vision course) to find correspondences over two rectified stereo images. Use the parameters specified as follow since we will not enter in details of these functions. Be careful to use gray level rectified images for the correspondence algorithm. You might modify the Stereo Matching parameters or even try other methods (for example `StereoSGBM_create`). 
 Note: you need to perform a conversion to an 8 bits grey level image to display the disparity map.
 ```html
@@ -105,7 +105,7 @@ cv2.imshow('Disparity Map', disparity)
 cv2.waitKey()
 ```
 
-##	3D Reconstruction
+## 8.7 - 3D Reconstruction
 Use the function cvReprojectImageTo3D to compute the 3D coordinates of the pixels in the disparity map. The parameters of cvReprojectImageTo3D are the disparity map (`disp` in previous exercise), and the matrix Q given by the function `cvStereoRectify`. Save the 3D coordinates in a npz file.
 
 ## Open3D installation (homework)

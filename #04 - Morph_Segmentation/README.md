@@ -8,7 +8,7 @@
 
 [OpenCV Morphological operations](https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html) 
 
-##	Binary images — Dilation 
+##	4.1 - Binary images — Dilation 
 When applied to binary images, the morphological dilation operation expands the boundaries of foreground regions.
 Given the gray-level image `wdg2.bmp`, create a new program (`Aula_04_exe_01.py`) carrying out the following sequence of operations:
 •	Conversion to a binary image, with threshold 120.
@@ -18,7 +18,7 @@ Given the gray-level image `wdg2.bmp`, create a new program (`Aula_04_exe_01.py`
 What happens if you repeatedly apply the dilation operation using the same structuring element?
 Now, use a square structuring element, of size 11×11. Repeatedly apply the dilation operation. What differences do you notice? 
 
-## Binary images — Erosion
+## 4.2 - Binary images — Erosion
 When applied to binary images, the morphological erosion operation essentially shrinks the boundaries of foreground regions.
 Given the gray-level image `wdg2.bmp`, carry out the following sequence of operations:
 
@@ -39,7 +39,7 @@ Try using:
 
 What happens?
 
-##	Segmentation with morphological operations
+## 4.3 - Segmentation with morphological operations
 A morphological erosion might be the first step before segmenting contiguous image regions. 
 
 Given the gray-level image `mon1.bmp`, carry out the following sequence of operations:
@@ -51,7 +51,7 @@ Given the gray-level image `mon1.bmp`, carry out the following sequence of opera
 What happens if you use a square structuring element of size 9×9?
 
 
-##	Opening
+## 4.4 - Opening
 The morphological opening operation corresponds to applying an **erosion** operation followed by a **dilation** operation, using the same structuring element.
 
 Given the binary image `art3.bmp`, we want to count the circular regions. Carry out a morphological opening using a circular structuring element, with a diameter of 11 pixels. 
@@ -59,13 +59,13 @@ Given the binary image `art3.bmp`, we want to count the circular regions. Carry 
 Given the binary image `art2.bmp`, we want to separately segment the vertical and the horizontal line segments. Carry out a morphological opening using a rectangular structuring element of size `3×9`, and using a rectangular structuring element of size `9×3`. What happens?
 
 
-4.5	Closing
+## 4.5 - Closing
 The morphological closing operation corresponds to applying a **dilation** operation followed by an **erosion** operation, using the same structuring element.
 
 Given the binary image `art4.bmp`, we want to remove the circular regions of smaller size. Carry out a morphological closing using a circular structuring element, with a diameter of 22 pixels.
 Use structuring elements of smaller and larger diameter. Analyze the resulting images.
 
-## Region Segmentation using Flood-Filling
+## 4.6 - Region Segmentation using Flood-Filling
 Create a new example (`Aula_04_exe_07.py`) that allows segmenting regions of a given image.
  
 Starting from a **seed pixel**, the `floodFill` function segments a region by spreading the seed value to neighboring pixels with (approximately) the same intensity value. 

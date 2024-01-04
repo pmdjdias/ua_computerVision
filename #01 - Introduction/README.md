@@ -9,7 +9,7 @@ Follow the steps in the following link to perform Python and OpenCV installation
 https://www.python.org/downloads/
 https://pypi.org/project/opencv-python/
 
- ## OpenCV Documentation
+## OpenCV Documentation
 The OpenCV documentation is available at:
 http://docs.opencv.org
 
