@@ -2,7 +2,7 @@
 
 ## Outline
 * Image operations
-* Reading and displaying images with different formats
+* Reading and displaying images
 * Direct pixel manipulation
 * Example of a mathematical operation: image subtraction
 * Interaction: selecting pixels and drawing on an image
