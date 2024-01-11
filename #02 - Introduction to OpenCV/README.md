@@ -15,7 +15,7 @@ Access the pixels values of the copied image, set to 0 every pixel of the copy i
 Display the original image and the modified image.
 
 ## 2.2 - Simple mathematical operation: image subtraction
-Based on the previous example, create a new program that reads and displays the two image files deti.bmp and deti.jpg. 
+Based on the previous example, create a new program that reads and displays the two image deti.bmp and deti.jpg. 
 To identify possible differences between the two images, carry out a subtraction operation. Be careful since the cv subtract operation is saturated and is different from the numpy – operations that is a modulo operations.
 Analyze the resulting image. 
 
