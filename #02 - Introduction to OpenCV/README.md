@@ -28,7 +28,7 @@ Compare the results of the image subtraction operation for different compression
 Modify the previous example to open and display just one image. Add a callback function to detect a right mouse click on the window and draw filled circle should be drawn, with center on the selected image pixel (function `cv2.circle`).
 To register the new callback function use:
 ``` html
-	def mouse_handler(event, x, y, flags, params):
+def mouse_handler(event, x, y, flags, params):
     if event == cv2.EVENT_LBUTTONDOWN:
         print("left click")
 ```
