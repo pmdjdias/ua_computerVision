@@ -8,7 +8,7 @@ Welcome to Computer Vision Course repository! Here you will find the sources and
 * [#03 - Low Level Image processing](<./%2303%20-%20Low Level Image Processing I>)
 * [#04 - Morphology and Segmentation](<./%2304%20-%20Morph_Segmentation>)
 * [#05 - Edges Lines and Corners](<./%2305%20-%20Edges_Lines_Corners>)
-* [#06 - Geometric Transformations](<./%2306%20-%20Geometric Transforms>)
+* [#06 - Geometric Transformations](<./%2306%20-%20GeometricTransforms>)
 * [#07 - Camera Calibration](<./%2307%20-%20CameraCalibration>)
 * [#08 - Stereo Vision](<./%2308%20-%20StereoVision>)
 * [#09 - 3D vision and point clouds](<./%2309%20-%203D Vision>)
