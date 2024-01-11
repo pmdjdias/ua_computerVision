@@ -4,7 +4,7 @@ Welcome to Computer Vision Course repository! Here you will find the sources and
 
 ## Lab Classes and sources
 * [#01 - OpenCV Install](<./%2301%20-%20OpenCV%20Install/>)
-* [#02 - Cameras and Images](<./%2302%20-%20Introduction to OpenCV>)
+* [#02 - Introduction to OpenCV](<./%2302%20-%20Introduction to OpenCV>)
 * [#03 - Low Level Image processing](<./%2303%20-%20Low Level Image Processing I>)
 * [#04 - Morphology and Segmentation](<./%2304%20-%20Morph_Segmentation>)
 * [#05 - Edges Lines and Corners](<./%2305%20-%20Edges_Lines_Corners>)
