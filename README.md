@@ -18,7 +18,7 @@ Welcome to Computer Vision Course repository! Here you will find the sources and
 # Credits
 * Course organization, class notes and tutorials  
 Prof Paulo Dias  
-* Using some materiass from\
+* Using some materials from\
 Prof<sup>a</sup>. Beatriz Sousa Santos - [contact](mailto:bss@ua.pt)\
 Prof. António Neves - [contact](mailto:an@ua.pt)\
 Prof. Joaquim Madeira - [contact](mailto:jmadeira@ua.pt)
