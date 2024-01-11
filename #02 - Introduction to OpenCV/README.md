@@ -1,7 +1,9 @@
 # Lab 2 - Introduction to OpenCV
 
 ## Outline
-* Image operations; reading and displaying images with different formats, direct pixel manipulation
+* Image operations
+* Reading and displaying images with different formats
+* Direct pixel manipulation
 * Example of a mathematical operation: image subtraction
 * Interaction: selecting pixels and drawing on an image
 * Conversion between color spaces
