@@ -1,4 +1,4 @@
-Lab 10 - 3D Vision / Mesh processing
+# Lab 10 - 3D Vision / Mesh processing
 
 ## Outline
 * Normal estimation
