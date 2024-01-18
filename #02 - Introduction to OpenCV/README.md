@@ -10,7 +10,7 @@
 
 
 ## 2.1 - Direct pixel manipulation
-Read again the lena.jpg image (`Aula_02_ex_01.py`) and create a copy of the image (function `copy`).
+Read again the lena.jpg image (`aula_02_ex_01.py`) and create a copy of the image (function `copy`).
 Access the pixels values of the copied image, set to 0 every pixel of the copy image whose intensity value is less than 128 in the original image, you can access a given pixel as an array image[x,y]. 
 Display the original image and the modified image.
 Modify the code to allow reading the name of the gray-level image from the command line. Do not forget to import the system library (`import sys`) to allow the access to the command line arguments (`sys.argv[1]`). Run the code with images with different format (see directory images and use for example the orchid.bmp). Analyze the image parametres displayed by the program (note that in some case, the shape function may return a third parameter). 
