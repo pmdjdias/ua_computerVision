@@ -34,7 +34,6 @@ For each image pixel, the intensity of the corresponding pixel in the resulting 
 
     $ final(x,y) = {original(x,y)-min  \over max-min} \times 255 $
  
-## Optional
 Apply the Contrast-Stretching operation to the `DETI.bmp` image and the `input.png` image. 
 Visualize the histograms of the different images. What differences do you notice?
 
