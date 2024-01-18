@@ -1,7 +1,7 @@
 # Lab 3 - Low level image processing
 
 ## Outline
-* Interaction with the keyboard and drawing of simple primitives
+* Drawing of simple primitives
 * Construction and visualization of histograms
 * Contrast-Stretching and histogram equalization
 * Thresholding
