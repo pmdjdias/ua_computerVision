@@ -1,11 +1,10 @@
 # Lab 3 - Low level image processing
 
 ## Outline
-* Interaction with the keyboard and drawing simple primitives
-* Constructing and visualizing histograms
+* Interaction with the keyboard and drawing of simple primitives
+* Construction and visualization of histograms
 * Contrast-Stretching and histogram equalization
 * Thresholding
-
 
 ## 3.1 - Drawing a grid upon an image
 Create a new example (`Aula_03_ex_01.py`) that allows superimposing a grid (spacing of 20 pixels) upon an image read from file and displays the resulting image.
