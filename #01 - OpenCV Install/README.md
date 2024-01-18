@@ -14,5 +14,5 @@ The OpenCV documentation is available at:
 http://docs.opencv.org
 
 ## 1.1	Test example
-Run and test the file Aula_01_ex_01.py 
+Run and test the file aula_01_ex_01.py 
 
