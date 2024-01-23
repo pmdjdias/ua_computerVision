@@ -22,9 +22,9 @@ Now, use a square structuring element, of size 11×11. Repeatedly apply the dila
 When applied to binary images, the morphological erosion operation essentially shrinks the boundaries of foreground regions.
 Given the gray-level image `wdg2.bmp`, carry out the following sequence of operations:
 
-•	Conversion to a binary image, with threshold 120.
-•	Inversion of the resulting image (i.e., obtaining the negative image).
-•	Erosion of the negative image using a circular structuring element, with a diameter of 11 pixels.
+*	Conversion to a binary image, with threshold 120.
+*	Inversion of the resulting image (i.e., obtaining the negative image).
+*	Erosion of the negative image using a circular structuring element, with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the erosion operation using the same structuring element?
 
