@@ -48,7 +48,7 @@ Use the developed code to analyze the effects of applying different **Gaussian f
 Use the same test images as before.
 
 ## 5.5 - Canny detector
-Create a new example (`aula_05_exe_05.py`) that allows, similarly to the previous example, applying the Canny detector to a given image.
+Create a new example (`aula_05_exe_05.py`) that allows applyies the Canny detector to a given image.
 Use the function:
 ``` html
 edges = cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]])
