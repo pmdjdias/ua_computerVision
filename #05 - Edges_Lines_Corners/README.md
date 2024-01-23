@@ -9,10 +9,10 @@
 [OpenCV Filtering operations](https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html) 
 
 ## 5.1 - Thresholding 
-Create a new program (`Aula_05_exe_01.py`) that allows applying Thresholding operations to gray-level images. Use the corresponding OpenCV function and create a resulting image for each one of the possible operation types: THRESH_BINARY, THRESH_BINARY_INV, THRESH_TRUNC, THRESH_TOZERO and THRESH_TOZERO_INV.
+Create a new program (`aula_05_exe_01.py`) that allows applying Thresholding operations to gray-level images. Use the corresponding OpenCV function and create a resulting image for each one of the possible operation types: THRESH_BINARY, THRESH_BINARY_INV, THRESH_TRUNC, THRESH_TOZERO and THRESH_TOZERO_INV.
 
 ## 5.2 - Averaging Filters
-Compile and test the file `Aula_05_exe_02.py`. 
+Compile and test the file `aula_05_exe_02.py`. 
 Analyze the code and verify how an averaging filter is applied using the function:
 ``` html
 dst = cv2.blur(src, ksize[, dst[, anchor[, borderType]]])
@@ -26,7 +26,7 @@ Use the code of the previous example to analyze the effects of applying differen
 Use the following test images: `fce5noi3.bmp`, `fce5noi4.bmp`, `fce5noi6.bmp`, `sta2.bmp`, `sta2noi1.bmp`.
 
 ## 5.3 - Median Filters
-Create a new example (`Aula_05_exe_03.py`) that allows, similarly to the previous example, applying median filters to a given image.
+Create a new example (`aula_05_exe_03.py`) that allows, similarly to the previous example, applying median filters to a given image.
 Use the function:
 ``` html
 dst = cv2.medianBlur(src, ksize[, dst])
@@ -37,7 +37,7 @@ Use the developed code to analyze the effects of applying different **median fil
 Use the same test images as before.
 
 ## 5.4 - Gaussian Filters
-Create a new example (`Aula_05_exe_04.py`) that allows, similarly to the previous example, applying Gaussian filters to a given image.
+Create a new example (`aula_05_exe_04.py`) that allows, similarly to the previous example, applying Gaussian filters to a given image.
 Use the function:
 ``` html
 Dst = cv2.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]])
@@ -48,7 +48,7 @@ Use the developed code to analyze the effects of applying different **Gaussian f
 Use the same test images as before.
 
 ## 5.5 - Canny detector
-Create a new example (`Aula_05_exe_06.py`) that allows, similarly to the previous example, applying the Canny detector to a given image.
+Create a new example (`aula_05_exe_06.py`) that allows, similarly to the previous example, applying the Canny detector to a given image.
 Use the function:
 ``` html
 edges = cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]])
