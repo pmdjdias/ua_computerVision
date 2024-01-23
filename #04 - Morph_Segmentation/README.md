@@ -27,15 +27,14 @@ Given the gray-level image `wdg2.bmp`, carry out the following sequence of opera
 *	Erosion of the negative image using a circular structuring element, with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the erosion operation using the same structuring element?
-
 Now, use a square structuring element, of size 11×11. Repeatedly apply the erosion operation. What differences do you notice? 
 
-The morphological erosion has directional effects, when using non-symmetrical structuring elements.
+[comment]: <>The morphological erosion has directional effects, when using non-symmetrical structuring elements.
 
 Try using:
 
-•	A structuring element of size 11×1.
-•	A square structuring element of size 3×3; but with its origin (“hotspot”) in the center pixel of the first row.
+*	A structuring element of size 11×1.
+*	A square structuring element of size 3×3; but with its origin (“hotspot”) in the center pixel of the first row.
 
 What happens?
 
@@ -44,9 +43,9 @@ A morphological erosion might be the first step before segmenting contiguous ima
 
 Given the gray-level image `mon1.bmp`, carry out the following sequence of operations:
 
-•	Conversion to a binary image, with threshold 90.
-•	Inversion of the resulting image (i.e., obtaining the negative image).
-•	Repeated erosion (twice) of the resulting image using a circular structuring element, with a diameter of 11 pixels.
+*	Conversion to a binary image, with threshold 90.
+*	Inversion of the resulting image (i.e., obtaining the negative image).
+*	Repeated erosion (twice) of the resulting image using a circular structuring element, with a diameter of 11 pixels.
 
 What happens if you use a square structuring element of size 9×9?
 
