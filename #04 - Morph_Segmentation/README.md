@@ -29,7 +29,7 @@ Given the gray-level image `wdg2.bmp`, carry out the following sequence of opera
 What happens if you repeatedly apply the erosion operation using the same structuring element?
 Now, use a square structuring element, of size 11×11. Repeatedly apply the erosion operation. What differences do you notice? 
 
-[comment]: <>The morphological erosion has directional effects, when using non-symmetrical structuring elements.
+<!--The morphological erosion has directional effects, when using non-symmetrical structuring elements.-->
 
 Try using:
 
