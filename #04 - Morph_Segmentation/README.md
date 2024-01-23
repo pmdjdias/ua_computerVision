@@ -10,7 +10,7 @@
 
 ##	4.1 - Binary images — Dilation 
 When applied to binary images, the morphological dilation operation expands the boundaries of foreground regions.
-Given the gray-level image `wdg2.bmp`, create a new program (`Aula_04_exe_01.py`) carrying out the following sequence of operations:
+Given the gray-level image `wdg2.bmp`, create a new program (`aula_04_exe_01.py`) carrying out the following sequence of operations:
 * Conversion to a binary image, with threshold 120.
 *	Inversion of the resulting image (i.e., obtaining the negative image).
 *	Dilation of the negative image using a circular structuring element, with a diameter of 11 pixels.
@@ -65,7 +65,7 @@ Given the binary image `art4.bmp`, we want to remove the circular regions of sma
 Use structuring elements of smaller and larger diameter. Analyze the resulting images.
 
 ## 4.6 - Region Segmentation using Flood-Filling
-Create a new example (`Aula_04_exe_06.py`) that allows segmenting regions of a given image.
+Create a new example (`aula_04_exe_06.py`) that allows segmenting regions of a given image.
  
 Starting from a **seed pixel**, the `floodFill` function segments a region by spreading the seed value to neighboring pixels with (approximately) the same intensity value. 
 
