@@ -65,7 +65,7 @@ Given the binary image `art4.bmp`, we want to remove the circular regions of sma
 Use structuring elements of smaller and larger diameter. Analyze the resulting images.
 
 ## 4.6 - Region Segmentation using Flood-Filling
-Create a new example (`Aula_04_exe_07.py`) that allows segmenting regions of a given image.
+Create a new example (`Aula_04_exe_06.py`) that allows segmenting regions of a given image.
  
 Starting from a **seed pixel**, the `floodFill` function segments a region by spreading the seed value to neighboring pixels with (approximately) the same intensity value. 
 
