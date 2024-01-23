@@ -55,7 +55,8 @@ edges = cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradi
 ```
 
 Note that this detector uses hysteresis and needs two threshold values: the larger value (e.g., 100) to determine “stronger” contours; the smaller value (e.g., 75) to allow identifying other contours connected to a “stronger” one.
-Test the developed operations using the `wdg2.bmp`, `lena.jpg`, `cln1.bmp` and `Bikesgray.jpg` images
+Test the developed operations using the `wdg2.bmp`, `lena.jpg`, `cln1.bmp` and `Bikesgray.jpg` images.
+
 Use different threshold values: for instance, 1 and 255; 220 and 225; 1 and 128.
 
 ## Optional
