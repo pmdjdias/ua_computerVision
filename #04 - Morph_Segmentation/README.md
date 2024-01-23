@@ -11,9 +11,9 @@
 ##	4.1 - Binary images — Dilation 
 When applied to binary images, the morphological dilation operation expands the boundaries of foreground regions.
 Given the gray-level image `wdg2.bmp`, create a new program (`Aula_04_exe_01.py`) carrying out the following sequence of operations:
-•	Conversion to a binary image, with threshold 120.
-•	Inversion of the resulting image (i.e., obtaining the negative image).
-•	Dilation of the negative image using a circular structuring element, with a diameter of 11 pixels.
+* Conversion to a binary image, with threshold 120.
+*	Inversion of the resulting image (i.e., obtaining the negative image).
+*	Dilation of the negative image using a circular structuring element, with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the dilation operation using the same structuring element?
 Now, use a square structuring element, of size 11×11. Repeatedly apply the dilation operation. What differences do you notice? 
