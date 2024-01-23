@@ -18,9 +18,9 @@ Analyze the code and verify how an averaging filter is applied using the functio
 dst = cv2.blur(src, ksize[, dst[, anchor[, borderType]]])
 ```
 Write additional code allowing to:
-•	Apply (5 × 5) and (7 × 7) averaging filters to a given image.
-•	Apply successively (e.g., 3 times) the same filter to the resulting image.
-•	Visualize and compare the results of the successive operations.
+*	Apply (5 × 5) and (7 × 7) averaging filters to a given image.
+*	Apply successively (e.g., 3 times) the same filter to the resulting image.
+*	Visualize and compare the results of the successive operations.
 Test the developed operations using the `Lena_Ruido.png` and `DETI_Ruido.png` images.
 Use the code of the previous example to analyze the effects of applying different **averaging filters** to various images, and to compare the resulting images among themselves and with the original image.
 Use the following test images: `fce5noi3.bmp`, `fce5noi4.bmp`, `fce5noi6.bmp`, `sta2.bmp`, `sta2noi1.bmp`.
