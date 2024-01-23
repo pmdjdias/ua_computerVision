@@ -13,7 +13,7 @@ def printImageFeatures(image):
 	# Image characteristics
 	if len(image.shape) == 2:
 		height, width = image.shape
-		nchannels = 1;
+		nchannels = 1
 	else:
 		height, width, nchannels = image.shape
 
