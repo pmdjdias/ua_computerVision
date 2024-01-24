@@ -48,11 +48,6 @@ Print the estimated matrix and compute the different transformation parameters f
 
 $`
 \begin{bmatrix}
-a & b & tx\\
-b & d & ty\\
-\end{bmatrix} 
-= 
-\begin{bmatrix}
 s_x cos\psi & -s_xsin\psi & x_c\\
 s_ysin\psi & s_ycos\psi & y_c\\
 \end{bmatrix} 
