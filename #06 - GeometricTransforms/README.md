@@ -147,8 +147,9 @@ https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 
 ## 6.6 - Homography estimation 	
-Consider the images `homography_1` to `homography_4.jpg`. These are images taken from a book from different viepoints such that the image is suffering an homography transform.
-Adapt the code of the previous exercizes to detect manually the corners of the book in the image  and evaluate and correct the homography.
+Consider the images `homography_1.jpg` to `homography_4.jpg`. 
+These are images taken from a book from different viepoints such that the image is suffering an homography transform.
+Adapt the code of the previous exercizes to select manually the corners of the book in the image and evaluate/correct the homography.
 Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
 
