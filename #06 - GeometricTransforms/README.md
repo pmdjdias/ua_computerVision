@@ -131,8 +131,8 @@ dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 ```
 Modify the number of matches to consider and see the impact in the evaluation of the transformation.
 
-Optional: you can use other strategy for the matching such as Brute Force Matcher
-https://docs.opencv.org/4.8.0/dc/dc3/tutorial_py_matcher.html.
+Optional: you can use other strategies for the matching such as the FLANN based Matcher.
+(https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html)
 
 ## 6.5 - Evaluation of transformation with automatic selection
 Use the correspondences from the flann matcher to evaluate again the transform between the two images as in question 6.2.
