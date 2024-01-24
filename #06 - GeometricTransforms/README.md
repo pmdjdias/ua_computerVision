@@ -17,8 +17,8 @@ M[0][2] = -50
 M[1][2] = 100
 print(M) 
 ```
-Save the image with the name `imagename_tf.jpg`
-Check the website from OpenCV and try some transform. See some of the matrix:
+Save the image transformed after applying the function `warpAffine` with the name `imagename_tf.jpg`
+Check the website from OpenCV to see other examples of possible transform:
 https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html
 
 ## 6.2 - Evaluation of transformation using manual selection
