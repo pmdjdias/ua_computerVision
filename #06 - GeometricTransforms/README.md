@@ -20,7 +20,7 @@ print(M)
 Save the image transformed after applying the function `warpAffine` with the name `imagename_tf.jpg`.
 
 Check the website from OpenCV to see other examples of possible transform:
-[https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html]
+https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html
 
 ## 6.2 - Evaluation of transformation using manual selection
 Open the original image and the transformed image. Use the following code (replicated for each images) to select 3 corresponding points in each image in the same order.
@@ -129,13 +129,18 @@ cv2.imshow("matches",im_matches)
 src_pts = np.float32([ kp1[m.queryIdx].pt for m in matches ]).reshape(-1,1,2)
 dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 ```
-Modify the number of matches to consider and see the impact in the evaluation of the transformation.
-
-Optional: you can use other strategies for the matching such as the FLANN based Matcher.
-(https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html)
+Modify the number of matches to consider and see its impact.
 
 ## 6.5 - Evaluation of transformation with automatic selection
-Use the correspondences from the flann matcher to evaluate again the transform between the two images as in question 6.2.
+Use the correspondences from the brute matcher to evaluate again the transform between the two images as in question 6.2. Do not forget the conversion numpy array.
+```html
+# Conversion to np array
+src_pts = np.float32([ kp1[m.queryIdx].pt for m in matches ]).reshape(-1,1,2)
+dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
+```
+
+Optional: you may use other strategies (for example the FLANN based Matcher) to find correspondences between the images.
+https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 
 ## 6.6 - Homography estimation 	
