@@ -66,7 +66,7 @@ s_ysin\psi & s_ycos\psi & y_c
 Then 
 $`
 t_x = x_c
-\\ end
+\\ quad
 t_y = y_c\\
 s_x=sign(a)\sqrt{a^2+b^2}\\
 s_y=sign(d)\sqrt{c^2+d^2}\\
