@@ -48,6 +48,7 @@ Print the estimated matrix and compute the different transformation parameters f
 You may use the following formulas (import the math package) to compute the transformation parameters:
 
 Considering that
+
 $`
 \begin{bmatrix}
 \begin{array}{cc} 
@@ -63,11 +64,12 @@ s_ysin\psi & s_ycos\psi & y_c
 \end{array}
 \end{bmatrix} 
 `$
+
 Then 
+
 $`
 \begin{split}
-t_x = x_c
-\\ quad
+t_x = x_c \\
 t_y = y_c\\
 s_x=sign(a)\sqrt{a^2+b^2}\\
 s_y=sign(d)\sqrt{c^2+d^2}\\
