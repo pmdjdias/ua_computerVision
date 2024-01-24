@@ -98,8 +98,7 @@ sift = cv2.SIFT_create()
 kp1, des1 = sift.detectAndCompute(src,None)
 ```
 
-Display the detected points in each of the images.
-
+Display the detected points in each of the images using the drawKeypoints functions.
 More information in:
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
