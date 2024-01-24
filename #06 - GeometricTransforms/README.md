@@ -57,20 +57,7 @@ s_x cos\psi & -s_xsin\psi & x_c\\
 s_ysin\psi & s_ycos\psi & y_c\\
 \end{bmatrix} 
 `$
-with
-$`
-x_c=tx 
-\\
-y_c=ty
-`$
-and
-$`
-s_x=sign(a)\sqrt{a^2+b^2}
-\\
-s_y=sign(d)\sqrt{c^2+d^2}
-\\
-tan\psi = -\frac{b}{a} = \frac{c}{d}
-`$
+
 
 
  
