@@ -20,6 +20,7 @@ print(M)
 Save the image transformed after applying the function `warpAffine` with the name `imagename_tf.jpg`.
 
 Check the website from OpenCV to see other examples of possible transform:
+
 https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html
 
 ## 6.2 - Evaluation of transformation using manual selection
@@ -101,6 +102,7 @@ kp1, des1 = sift.detectAndCompute(src,None)
 Display the detected points in each of the images using the drawKeypoints functions.
 
 More information in:
+
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
 [comment]: <> (Aqui talvez melhor usar exemplo do brute force e depois passar para o FLAN como optional(/Extra))
@@ -140,11 +142,14 @@ dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 ```
 
 Optional: you may use other strategies (for example the FLANN based Matcher) to find correspondences between the images.
+
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 
 ## 6.6 - Homography estimation 	
-Consider the images `homography_1` to `homography_4.jpg`. These are images taken from a book from different position and thus the book is suffering an homography transform.
-Use previous code to select the corners of the book in the image evaluate and correct the homography using the `findHomography` and `warpPerspective` function from OpenCV.
+Consider the images `homography_1` to `homography_4.jpg`. These are images taken from a book from different viepoints such that the image is suffering an homography transform.
+Adapt the code of the previous exercizes to detect manually the corners of the book in the image  and evaluate and correct the homography.
+Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
+
 https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
