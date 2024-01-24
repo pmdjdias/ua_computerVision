@@ -4,7 +4,7 @@
 * Affine transformation
 * Manual correspondences to evaluate affine transformation
 * Keypoint detection and matching
-* Homography evaluation
+* Homography transformation
 
 ## 6.1 - Affine transformations
 Select an image of your choice and apply rotation and translation using the OpenCV transformation operations. Note that you can easily combine scaling and rotation when defining the transformation matrix.
