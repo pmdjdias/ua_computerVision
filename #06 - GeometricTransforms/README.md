@@ -50,7 +50,12 @@ $`
 \begin{bmatrix}
 s_x cos\psi & -s_xsin\psi & x_c\\
 s_ysin\psi & s_ycos\psi & y_c\\
-\end{bmatrix} 
+\end{bmatrix}
+=
+\begin{bmatrix}
+s_x cos\psi & -s_xsin\psi & x_c\\
+s_ysin\psi & s_ycos\psi & y_c\\
+\end{bmatrix}
 `$
 
 
