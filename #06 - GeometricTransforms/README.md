@@ -129,7 +129,7 @@ cv2.imshow("matches",im_matches)
 src_pts = np.float32([ kp1[m.queryIdx].pt for m in matches ]).reshape(-1,1,2)
 dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 ```
-Modify some parameters of the matcher: min_match count, search parameters and threshold to evaluate the impact of these parameters on the matching.
+Modify the number of matches to consider and see the impact in the evaluation of the transformation.
 
 Optional: you can use other strategy for the matching such as Brute Force Matcher
 https://docs.opencv.org/4.8.0/dc/dc3/tutorial_py_matcher.html.
