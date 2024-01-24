@@ -69,12 +69,21 @@ Then
 
 $`
 \begin{split}
-t_x = x_c \\
-t_y = y_c\\
+t_x = x_c\\
+t_y = y_c
+\end{split}
+`$
+
+$`
+\begin{split}
 s_x=sign(a)\sqrt{a^2+b^2}\\
 s_y=sign(d)\sqrt{c^2+d^2}\\
-tan\psi = -\frac{b}{a} = \frac{c}{d}
 \end{split}
+`$
+
+and
+$`
+tan(\psi) = -\frac{b}{a} = \frac{c}{d}
 `$
 
 
