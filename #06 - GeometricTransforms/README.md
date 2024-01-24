@@ -99,13 +99,14 @@ kp1, des1 = sift.detectAndCompute(src,None)
 ```
 
 Display the detected points in each of the images using the drawKeypoints functions.
+
 More information in:
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
 [comment]: <> (Aqui talvez melhor usar exemplo do brute force e depois passar para o FLAN como optional(/Extra))
-## 6.4 - Find correspondences between keypoints using FLAN based matcher
-Use a FLAN matcher to find corresponding points between the two images.
-https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html 
+## 6.4 - Find correspondences between keypoints using Brute Force matcher
+Use a Brute Force matcher to find corresponding points between the two images.
+https://docs.opencv.org/5.x/dc/dc3/tutorial_py_matcher.html
 ```html
 MIN_MATCH_COUNT = 10
 DISTANCE_RATIO = 0.95
