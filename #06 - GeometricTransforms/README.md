@@ -44,8 +44,10 @@ Warp and display the transformed image using the warpAffine  function using a co
 warp_dst = cv2.warpAffine(src, transformation_rigid_matrix, (src.shape[1], src.shape[0]))
 ```
 
-Print the estimated matrix and compute the different transformation parameters from the matrix to check if the matrix was correctly evaluated. You may use the following formulas and import the math package to compute mathematical computations:
+Print the estimated matrix and compute the different transformation parameters from the matrix to check if the transform was correctly evaluated. 
+You may use the following formulas (import the math package) to compute the transformation parameters:
 
+Considering that
 $`
 \begin{bmatrix}
 \begin{array}{cc} 
@@ -60,6 +62,20 @@ s_x cos\psi & -s_xsin\psi & x_c\\
 s_ysin\psi & s_ycos\psi & y_c
 \end{array}
 \end{bmatrix} 
+`$
+Then 
+$`
+t_x = x_c
+\\
+t_y = y_c
+\\
+s_x=sign(a)\sqrt{a^2+b^2}
+\\
+s_y=sign(d)\sqrt{c^2+d^2}
+$$
+and
+$$
+tan\psi = -\frac{b}{a} = \frac{c}{d}
 `$
 
 
