@@ -4,7 +4,7 @@
 * Affine transformation
 * Manual correspondences to evaluate affine transformation
 * Keypoint detection and matching
-* Homography evaluation
+* Homography transformation
 
 ## 6.1 - Affine transformations
 Select an image of your choice and apply rotation and translation using the OpenCV transformation operations. Note that you can easily combine scaling and rotation when defining the transformation matrix.
@@ -15,10 +15,12 @@ M = cv2.getRotationMatrix2D((0,0),25,1)
 print(M)
 M[0][2] = -50
 M[1][2] = 100
-print(M) print(M) 
+print(M) 
 ```
-Save the image with the name `imagename_tf.jpg`
-Check the website from OpenCV and try some transform. See some of the matrix:
+Save the image transformed after applying the function `warpAffine` with the name `imagename_tf.jpg`.
+
+Check the website from OpenCV to see other examples of possible transform:
+
 https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html
 
 ## 6.2 - Evaluation of transformation using manual selection
@@ -43,45 +45,52 @@ Warp and display the transformed image using the warpAffine  function using a co
 warp_dst = cv2.warpAffine(src, transformation_rigid_matrix, (src.shape[1], src.shape[0]))
 ```
 
-Print the estimated matrix and compute the different transformation parameters from the matrix to check if the matrix was correctly evaluated. You may use the following formulas and import the math package to compute mathematical computations:
+Print the estimated matrix and compute the different transformation parameters from the matrix to check if the transform was correctly evaluated. 
+You may use the following formulas (import the math package) to compute the transformation parameters:
 
-$$
-\begin{pmatrix}
+Considering that
+
+$`
+\begin{bmatrix}
 \begin{array}{cc} 
 a & b & tx\\
-b & d & ty\\
+b & d & ty
 \end{array}
-\end{pmatrix}
-=
-\begin{pmatrix}
+\end{bmatrix} = 
+\quad
+\begin{bmatrix}
 \begin{array}{cc} 
 s_x cos\psi & -s_xsin\psi & x_c\\
-s_ysin\psi & s_ycos\psi & y_c\\
+s_ysin\psi & s_ycos\psi & y_c
 \end{array}
-\end{pmatrix}
-$$
-with
-$$
-x_c=tx 
-\\
-y_c=ty
-$$
-and
-$$
-s_x=sign(a)\sqrt{a^2+b^2}
-\\
-s_y=sign(d)\sqrt{c^2+d^2}
-$$
-and
-$$
-tan\psi = -\frac{b}{a} = \frac{c}{d}
-$$
+\end{bmatrix} 
+`$
 
+Then 
+
+$`
+\begin{split}
+t_x = x_c\\
+t_y = y_c
+\end{split}
+`$
+
+$`
+\begin{split}
+s_x=sign(a)\sqrt{a^2+b^2}\\
+s_y=sign(d)\sqrt{c^2+d^2}\\
+\end{split}
+`$
+
+and
+$`
+tan(\psi) = -\frac{b}{a} = \frac{c}{d}
+`$
  
-You may subtract both images after warping to evaluate the correctness of the evaluated transform.
+You may also show the result of subtracting images after warping to evaluate the correctness of the evaluated transform.
 
 ## 6.3 - Find keypoints in both Images using the SIFT algorithm 
-Detect points of interest in both image using the SIFT (Scale-Invariant Feature Transform).
+Use SIFT (Scale-Invariant Feature Transform) to detect points of interest in the original and transformed image.
 You may use the following code:
 ```html
 # Initiate SIFT detector
@@ -90,54 +99,57 @@ sift = cv2.SIFT_create()
 kp1, des1 = sift.detectAndCompute(src,None)
 ```
 
-Display the detected points in each of the images.
+Display the detected points in each of the images using the drawKeypoints functions.
 
 More information in:
+
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
 [comment]: <> (Aqui talvez melhor usar exemplo do brute force e depois passar para o FLAN como optional(/Extra))
-## 6.4 - Find correspondences between keypoints using FLAN based matcher
-Use a FLAN matcher to find corresponding points between the two images.
-https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html 
+## 6.4 - Find correspondences between keypoints using Brute Force matcher
+Use a Brute Force matcher to find corresponding points between the two images.
+https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 ```html
-MIN_MATCH_COUNT = 10
-DISTANCE_RATIO = 0.95
-FLANN_INDEX_KDTREE = 1
-index_params = dict(algorithm = FLANN_INDEX_KDTREE, trees = 5)
-search_params = dict(checks = 50)
-flann = cv2.FlannBasedMatcher(index_params, search_params)
-matches = flann.knnMatch(des1,des2,k=2)
-# store all the good matches as per Lowe's ratio test.
-good = []
-for m,n in matches:
-    if m.distance < DISTANCE_RATIO*n.distance: # Equivalente a ratio abaixo do DISTANCE_RATIO : m.distance/n.distance < DISTANCE_RATIO
-        good.append(m)
-        
-#draw correspondences
-draw_params = dict(matchColor = (0,255,0), # draw matches in green color
-                   singlePointColor = None,
-                   matchesMask = None, # draw only inliers
-                   flags = 2)
-        
-if len(good)>MIN_MATCH_COUNT:
-    img3 = cv2.drawMatches(src,kp1,dst,kp2,good,None,**draw_params)
-    cv2.imshow('gray',img3)
-else:
-    print( "Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT) )
+# create BFMatcher object
+bf = cv2.BFMatcher(cv2.DescriptorMatcher_BRUTEFORCE, crossCheck=True)
+# Match descriptors.
+matches = bf.match(des1,des2)
+# Sort them in the order of their distance.
+matches = sorted(matches, key = lambda x:x.distance)
 
-cv2.waitKey(-1)
+# Remove not so good matches
+numGoodMatches = int(len(matches) * 0.1)
+matches = matches[:numGoodMatches]
+
+
+# Draw matches
+im_matches = cv2.drawMatches(src,kp1,dst,kp2,matches,None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+
+cv2.imshow("matches",im_matches)
+
+# Evaluate transform
+src_pts = np.float32([ kp1[m.queryIdx].pt for m in matches ]).reshape(-1,1,2)
+dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 ```
-Modify some parameters of the matcher: min_match count, search parameters and threshold to evaluate the impact of these parameters on the matching.
-
-Optional: you can use other strategy for the matching such as Brute Force Matcher
-https://docs.opencv.org/4.8.0/dc/dc3/tutorial_py_matcher.html.
+Modify the number of matches to consider and see its impact.
 
 ## 6.5 - Evaluation of transformation with automatic selection
-Use the correspondences from the flann matcher to evaluate again the transform between the two images as in question 6.2.
+Use the correspondences from the brute matcher to evaluate again the transform between the two images as in question 6.2. Do not forget the conversion numpy array.
+```html
+# Conversion to np array
+src_pts = np.float32([ kp1[m.queryIdx].pt for m in matches ]).reshape(-1,1,2)
+dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
+```
+
+Optional: you may use other strategies (for example the FLANN based Matcher) to find correspondences between the images.
+
+https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 
 ## 6.6 - Homography estimation 	
-Consider the images `homography_1` to `homography_4.jpg`. These are images taken from a book from different position and thus the book is suffering an homography transform.
-Use previous code to select the corners of the book in the image evaluate and correct the homography using the `findHomography` and `warpPerspective` function from OpenCV.
+Consider the images `homography_1` to `homography_4.jpg`. These are images taken from a book from different viepoints such that the image is suffering an homography transform.
+Adapt the code of the previous exercizes to detect manually the corners of the book in the image  and evaluate and correct the homography.
+Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
+
 https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
