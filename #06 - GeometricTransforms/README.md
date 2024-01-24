@@ -46,7 +46,9 @@ warp_dst = cv2.warpAffine(src, transformation_rigid_matrix, (src.shape[1], src.s
 
 Print the estimated matrix and compute the different transformation parameters from the matrix to check if the matrix was correctly evaluated. You may use the following formulas and import the math package to compute mathematical computations:
 
-$`\sqrt{3}`$
+$`
+\sqrt{3}
+`$
 
 
  
