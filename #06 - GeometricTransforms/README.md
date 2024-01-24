@@ -89,7 +89,7 @@ tan(\psi) = -\frac{b}{a} = \frac{c}{d}
 You may also show the result of subtracting images after warping to evaluate the correctness of the evaluated transform.
 
 ## 6.3 - Find keypoints in both Images using the SIFT algorithm 
-Detect points of interest in both image using the SIFT (Scale-Invariant Feature Transform).
+Use SIFT (Scale-Invariant Feature Transform) to detect points of interest in the original and transformed image.
 You may use the following code:
 ```html
 # Initiate SIFT detector
