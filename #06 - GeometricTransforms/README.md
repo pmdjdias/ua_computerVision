@@ -15,7 +15,7 @@ M = cv2.getRotationMatrix2D((0,0),25,1)
 print(M)
 M[0][2] = -50
 M[1][2] = 100
-print(M) print(M) 
+print(M) 
 ```
 Save the image with the name `imagename_tf.jpg`
 Check the website from OpenCV and try some transform. See some of the matrix:
