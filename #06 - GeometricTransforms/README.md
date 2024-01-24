@@ -106,34 +106,28 @@ https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 [comment]: <> (Aqui talvez melhor usar exemplo do brute force e depois passar para o FLAN como optional(/Extra))
 ## 6.4 - Find correspondences between keypoints using Brute Force matcher
 Use a Brute Force matcher to find corresponding points between the two images.
-https://docs.opencv.org/5.x/dc/dc3/tutorial_py_matcher.html
+https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 ```html
-MIN_MATCH_COUNT = 10
-DISTANCE_RATIO = 0.95
-FLANN_INDEX_KDTREE = 1
-index_params = dict(algorithm = FLANN_INDEX_KDTREE, trees = 5)
-search_params = dict(checks = 50)
-flann = cv2.FlannBasedMatcher(index_params, search_params)
-matches = flann.knnMatch(des1,des2,k=2)
-# store all the good matches as per Lowe's ratio test.
-good = []
-for m,n in matches:
-    if m.distance < DISTANCE_RATIO*n.distance: # Equivalente a ratio abaixo do DISTANCE_RATIO : m.distance/n.distance < DISTANCE_RATIO
-        good.append(m)
-        
-#draw correspondences
-draw_params = dict(matchColor = (0,255,0), # draw matches in green color
-                   singlePointColor = None,
-                   matchesMask = None, # draw only inliers
-                   flags = 2)
-        
-if len(good)>MIN_MATCH_COUNT:
-    img3 = cv2.drawMatches(src,kp1,dst,kp2,good,None,**draw_params)
-    cv2.imshow('gray',img3)
-else:
-    print( "Not enough matches are found - {}/{}".format(len(good), MIN_MATCH_COUNT) )
+# create BFMatcher object
+bf = cv2.BFMatcher(cv2.DescriptorMatcher_BRUTEFORCE, crossCheck=True)
+# Match descriptors.
+matches = bf.match(des1,des2)
+# Sort them in the order of their distance.
+matches = sorted(matches, key = lambda x:x.distance)
 
-cv2.waitKey(-1)
+# Remove not so good matches
+numGoodMatches = int(len(matches) * 0.1)
+matches = matches[:numGoodMatches]
+
+
+# Draw matches
+im_matches = cv2.drawMatches(src,kp1,dst,kp2,matches,None,flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
+
+cv2.imshow("matches",im_matches)
+
+# Evaluate transform
+src_pts = np.float32([ kp1[m.queryIdx].pt for m in matches ]).reshape(-1,1,2)
+dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 ```
 Modify some parameters of the matcher: min_match count, search parameters and threshold to evaluate the impact of these parameters on the matching.
 
