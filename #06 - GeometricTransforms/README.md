@@ -50,14 +50,14 @@ $`
 \begin{bmatrix}
 \begin{array}{cc} 
 a & b & tx\\
-b & d & ty\\
+b & d & ty
 \end{array}
 \end{bmatrix} = 
-
+\quad
 \begin{bmatrix}
 \begin{array}{cc} 
 s_x cos\psi & -s_xsin\psi & x_c\\
-s_ysin\psi & s_ycos\psi & y_c\\
+s_ysin\psi & s_ycos\psi & y_c
 \end{array}
 \end{bmatrix} 
 `$
