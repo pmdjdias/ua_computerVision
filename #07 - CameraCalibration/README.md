@@ -35,8 +35,11 @@ You might improve the precision of the corner detection by using the `cornerSubP
 Use the function `cvProjectPoints` to project an orthogonal line (normal) or a wireframe cube in one of the calibration image (the first for example) after the calibration code. Use the rotation and translation vectors from the calibration to project the 3D point in the correct positions in the image.
 
 ## 7.3 - Using Camera on your computer
-Modify the code to use the camera from your computer to process the chessboard (comment the code for reading the provided images to allow switching between camera and provided images). Calibrate you camera with several chessboard images (use `cvWaitKey()` to move the chessboard position and a pre-defined number of images, for example 10). Be careful to check if the available chessboard is like the one in the provided images. If not, modify the code accordingly. If you want real metric distances, you need to update the code with the real distances of the used chessboard. Save the calibration parameters to a file.
-Sample code for accessing an image is openCV is as follow:
+Modify the code to use the camera from your computer to process the chessboard (comment the code for reading the provided images to allow switching between camera and provided images). 
+Calibrate you camera with several chessboard images (use `cvWaitKey()` to move the chessboard position and a pre-defined number of images, for example 10). Be careful to check if the available chessboard is like the one in the provided images. If not, modify the code accordingly.
+If you want real metric distances, you need to update the code with the real distances of the used chessboard.
+Save the calibration parameters to a file.
+Here is a sample code for accessing an image in openCV:
 ```html
 import cv2
 capture = cv2.VideoCapture(0)
