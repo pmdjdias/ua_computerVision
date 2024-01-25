@@ -47,15 +47,14 @@ http://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html
 
 ## 9.3 - ICP alignment
 Use the [registration_icp](http://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html) function to align the given down sampled cloud of points.
-Note that the values of the threshold should be adapted for each case. Normally an initial rough registration should also be provided to avoid bad registration However in this case, given the proximity of the provided depth images, this should not be necessary.
-Visualize in the same window the original and the aligned cloud of points. Modify the ICP parameters to check the quality of the registration (for example use the default values and evaluate the results).
-The evaluated transform can be recovered with the function as the `registration_icp.transformation` And you can apply the transformation to a pointcloud using the transform method.
-Merge the two aligned pointclouds and save the obtain pointcloud to a new file `merged_offices.ply` (use the + operator).
 
-## 9.4 - Plane segmentation in Kinect image
-Use the following code to detect and crop the main plane from the previous point cloud using the segment_plane function. Modify the segment_plane value to see the results.
-Make the code iterative to detect the 5 main planes in the scene.
-[Plane Segementation](http://www.open3d.org/docs/latest/tutorial/Basic/pointcloud.html#Plane-segmentation)
+Note that the values of the threshold should be adapted for each case. Normally an initial rough registration should also be provided to avoid bad registration However in this case, given the proximity of the provided depth images, this should not be necessary.
+
+Visualize in the same window the original and the aligned cloud of points. Modify the ICP parameters to check the quality of the registration (for example use the default values and evaluate the results).
+
+The evaluated transform can be recovered with the function as the `registration_icp.transformation` And you can apply the transformation to a pointcloud using the transform method.
+
+Merge the two aligned pointclouds and save the obtain pointcloud to a new file `merged_offices.ply` (use the + operator).
 
 ##Optional
 Use the following code to pick at least 3 points between the two point clouds and feed the ICP algorithm with an initial transform: 
@@ -81,3 +80,10 @@ corr = np.zeros((len(picked_id_source), 2))
 corr[:, 0] = picked_id_source
 corr[:, 1] = picked_id_target
 ```
+
+## 9.4 - Plane segmentation in Kinect image
+Use the following code to detect and crop the main plane from the previous point cloud using the segment_plane function. 
+Modify the segment_plane value to see the results.
+modify the code to make it iterative to detect the 5 main planes in the scene.
+[Plane Segementation](http://www.open3d.org/docs/latest/tutorial/Basic/pointcloud.html#Plane-segmentation)
+
