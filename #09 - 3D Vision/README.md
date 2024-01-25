@@ -33,9 +33,11 @@ mesh_cropped = pcl.crop(bbox_cropped)
 You might also use the left image to add texture information to each 3D point, for these you can specify the color of the point cloud with the pcl.colors, specifying the color as an rgb value between [0,1]
 
 ##	9.2 - PCD (point cloud data) 3D format 
-Modify the source code viewcloud.cpp to read and visualize the two provided kinect images `office1.pcd` and `office2.pcd` The Point Cloud Data file format (PCD) used is the 3D file format from PCL and can be written and read directly using the PCL functions `o3d.io.read_point_cloud` and `o3d.io.write_point_cloud`. By default, kinect sensor returns NaN values that may cause problems in the processing, to remove NaN values you need to use the function `remove_non_finite_points`.
-Note:
-You might to down sample (reduce the number of points in the file) using the `voxel_down_sample` filter with a grid size of 0.05 in each direction. The `filt_office1.pcd` and `filt_office2.pcd` files have already been treated with this filter resulting in down sampled cloud of points. 
+Modify the source code viewcloud.cpp to read and visualize the two provided kinect images `office1.pcd` and `office2.pcd` The Point Cloud Data file format (PCD) used is the 3D file format from PCL and can be written and read directly using the PCL functions `o3d.io.read_point_cloud` and `o3d.io.write_point_cloud`. 
+Kinect sensor returns NaN values (when no measure was returend for a given pixel) that may cause problems in the processing. To remove NaN values you need to use the function `remove_non_finite_points`.
+
+## Note:
+You might downsample the 3D point cloud (reduce the number of points in the file) using the `voxel_down_sample` filter with a grid size of 0.05 in each direction. The `filt_office1.pcd` and `filt_office2.pcd` files have already been treated with this filter resulting in down sampled cloud of points. 
 ```html
 pcd.remove_non_finite_points()
 pcd = source.voxel_down_sample(voxel_size=0.5)
