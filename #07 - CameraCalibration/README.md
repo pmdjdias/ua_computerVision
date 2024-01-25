@@ -36,9 +36,13 @@ Use the function `cvProjectPoints` to project an orthogonal line (normal) or a w
 
 ## 7.3 - Using Camera on your computer
 Modify the code to use the camera from your computer to process the chessboard (comment the code for reading the provided images to allow switching between camera and provided images). 
+
 Calibrate you camera with several chessboard images (use `cvWaitKey()` to move the chessboard position and a pre-defined number of images, for example 10). Be careful to check if the available chessboard is like the one in the provided images. If not, modify the code accordingly.
+
 If you want real metric distances, you need to update the code with the real distances of the used chessboard.
+
 Save the calibration parameters to a file.
+
 Here is a sample code for accessing an image in openCV:
 ```html
 import cv2
@@ -54,7 +58,9 @@ cv2.destroyAllWindows()
 
 ## 7.4 - External calibration
 Calibrate a camera (using the given images or using your computer camera) and save the camera parameter file with another name. 
+
 Modify the previous examples to read the intrinsic and distortion parameters from the file and perform external parameters calibration (using function `solvePnP`) for a single image with the calibration pattern. 
+
 Read the file using the following code:
 ```html
 with np.load('camera_params.npz') as data:
@@ -64,6 +70,7 @@ print(intrinsics)
 print(distortion)
 ```
 Remember that in this case, the external calibration should be performed for each single image returning its position (rotation and orientation ).
+
 ##Optional
 Compute the external calibration parameters for the camera of your computer while seeing a live feed of a pattern and project a cube (or normal vector) on the processed images live on the pattern.
 
