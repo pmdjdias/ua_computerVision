@@ -71,7 +71,7 @@ print(distortion)
 ```
 Remember that in this case, the external calibration should be performed for each single image returning its position (rotation and orientation ).
 
-##Optional
+## Optional
 Compute the external calibration parameters for the camera of your computer while seeing a live feed of a pattern and project a cube (or normal vector) on the processed images live on the pattern.
 
 ## 7.5 - AruCO markers 
