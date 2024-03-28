@@ -30,12 +30,14 @@ mesh_cropped = pcl.crop(bbox_cropped)
 ```
 [Crop Point Cloud](http://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html#Crop-point-cloud)
 
-You might also use the left image to add colour information to each 3D point, for these you can specify the color of the point cloud with the pcl.colors, specifying the color as an rgb value between [0,1]
+You might also use the left image to add texture information to each 3D point, for these you can specify the color of the point cloud with the pcl.colors, specifying the color as an rgb value between [0,1]
 
 ##	9.2 - PCD (point cloud data) 3D format 
-Modify the source code viewcloud.cpp to read and visualize the two provided kinect images `office1.pcd` and `office2.pcd` The Point Cloud Data file format (PCD) used is the 3D file format from PCL and can be written and read directly using the PCL functions `o3d.io.read_point_cloud` and `o3d.io.write_point_cloud`. By default, kinect sensor returns NaN values that may cause problems in the processing, to remove NaN values you need to use the function `remove_non_finite_points`.
-Note:
-You might to down sample (reduce the number of points in the file) using the `voxel_down_sample` filter with a grid size of 0.05 in each direction. The `filt_office1.pcd` and `filt_office2.pcd` files have already been treated with this filter resulting in down sampled cloud of points. 
+Modify the source code viewcloud.cpp to read and visualize the two provided kinect images `office1.pcd` and `office2.pcd` The Point Cloud Data file format (PCD) used is the 3D file format from PCL and can be written and read directly using the PCL functions `o3d.io.read_point_cloud` and `o3d.io.write_point_cloud`. 
+Kinect sensor returns NaN values (when no measure was returend for a given pixel) that may cause problems in the processing. To remove NaN values you need to use the function `remove_non_finite_points`.
+
+## Note:
+You might downsample the 3D point cloud (reduce the number of points in the file) using the `voxel_down_sample` filter with a grid size of 0.05 in each direction. The `filt_office1.pcd` and `filt_office2.pcd` files have already been treated with this filter resulting in down sampled cloud of points. 
 ```html
 pcd.remove_non_finite_points()
 pcd = source.voxel_down_sample(voxel_size=0.5)
@@ -45,9 +47,13 @@ http://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html
 
 ## 9.3 - ICP alignment
 Use the [registration_icp](http://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html) function to align the given down sampled cloud of points.
+
 Note that the values of the threshold should be adapted for each case. Normally an initial rough registration should also be provided to avoid bad registration However in this case, given the proximity of the provided depth images, this should not be necessary.
+
 Visualize in the same window the original and the aligned cloud of points. Modify the ICP parameters to check the quality of the registration (for example use the default values and evaluate the results).
+
 The evaluated transform can be recovered with the function as the `registration_icp.transformation` And you can apply the transformation to a pointcloud using the transform method.
+
 Merge the two aligned pointclouds and save the obtain pointcloud to a new file `merged_offices.ply` (use the + operator).
 
 ## Optional
@@ -75,9 +81,3 @@ corr = np.zeros((len(picked_id_source), 2))
 corr[:, 0] = picked_id_source
 corr[:, 1] = picked_id_target
 ```
-
-## 9.4 - Plane segmentation in Kinect image
-Use the following code to detect and crop the main plane from one of the previous point cloud at your choice using the segment_plane function. Modify the segment_plane value to see the results.
-Make the code iterative to detect the 5 main planes in the scene.
-[Plane Segmentation](http://www.open3d.org/docs/latest/tutorial/Basic/pointcloud.html#Plane-segmentation)
-
