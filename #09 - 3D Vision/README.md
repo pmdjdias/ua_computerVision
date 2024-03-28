@@ -46,13 +46,13 @@ http://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html
 
 
 ## 9.3 - ICP alignment
-Use the [registration_icp](http://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html) function to align the given down sampled cloud of points.
+Use the [registration_icp](http://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html) function to align the two given cloud of points.
 
-Note that the values of the threshold should be adapted for each case. Normally an initial rough registration should also be provided to avoid bad registration However in this case, given the proximity of the provided depth images, this should not be necessary.
+Note that the values of the ICP thresholds should be adapted for each case. Typically an initial rough registration should be provided to avoid bad registration. However in this case, given the proximity of the provided depth images, this should not be necessary, and the algorithm should converge to a good estimation of the transform between the two point clouds.
 
 Visualize in the same window the original and the aligned cloud of points. Modify the ICP parameters to check the quality of the registration (for example use the default values and evaluate the results).
 
-The evaluated transform can be recovered with the function as the `registration_icp.transformation` And you can apply the transformation to a pointcloud using the transform method.
+The evaluated transform can be recovered with the function as the `registration_icp.transformation` and you can apply the transformation to a pointcloud using the transform method.
 
 Merge the two aligned pointclouds and save the obtain pointcloud to a new file `merged_offices.ply` (use the + operator).
 
