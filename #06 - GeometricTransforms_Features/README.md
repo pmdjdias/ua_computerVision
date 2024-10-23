@@ -105,7 +105,6 @@ More information in:
 
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
-[comment]: <> (Aqui talvez melhor usar exemplo do brute force e depois passar para o FLAN como optional(/Extra))
 ## 6.4 - Find correspondences between keypoints using Brute Force matcher
 Use a Brute Force matcher to find corresponding points between the two images.
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
@@ -146,7 +145,7 @@ Optional: you may use other strategies (for example the FLANN based Matcher) to 
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 
-## 6.6 - Homography estimation 	
+<!--## 6.6 - Homography estimation 	
 Consider the images `homography_1.jpg` to `homography_4.jpg`. 
 These are images taken from a book from different viewpoints such that the image is suffering an homography transform.
 Adapt the code of the previous exercises to select manually the corners of the book in the image and evaluate/correct the homography.
@@ -154,3 +153,4 @@ Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
 
 https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
+--!>
