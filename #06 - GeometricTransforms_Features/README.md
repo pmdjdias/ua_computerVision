@@ -53,7 +53,7 @@ Considering that
 $`
 \begin{bmatrix}
 \begin{array}{cc} 
-a & b & tx\\
+a & c & tx\\
 b & d & ty
 \end{array}
 \end{bmatrix} = 
