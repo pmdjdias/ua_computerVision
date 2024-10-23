@@ -145,7 +145,7 @@ Optional: you may use other strategies (for example the FLANN based Matcher) to 
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 
-<!--## 6.6 - Homography estimation 	
+## 6.6 - Homography estimation 	
 Consider the images `homography_1.jpg` to `homography_4.jpg`. 
 These are images taken from a book from different viewpoints such that the image is suffering an homography transform.
 Adapt the code of the previous exercises to select manually the corners of the book in the image and evaluate/correct the homography.
@@ -153,4 +153,4 @@ Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
 
 https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
---!>
+
