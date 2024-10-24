@@ -151,7 +151,7 @@ Adapt the code of the previous exercises to select manually the corners of the b
 Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
 
-Optional: Takez some picture with rectangular objects (books, paintings, furniture) and use the code to correct the homography.
+Optional: Take some pictures of your own with rectangular objects (books, paintings, furniture) and correct the homography using their geometry.
 
 https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
 
