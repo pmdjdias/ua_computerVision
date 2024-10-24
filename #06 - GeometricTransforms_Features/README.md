@@ -53,7 +53,7 @@ Considering that
 $`
 \begin{bmatrix}
 \begin{array}{cc} 
-a & b & tx\\
+a & c & tx\\
 b & d & ty
 \end{array}
 \end{bmatrix} = 
@@ -105,7 +105,10 @@ More information in:
 
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
+<<<<<<< HEAD
 <!--[comment]: <> (Aqui talvez melhor usar exemplo do brute force e depois passar para o FLAN como optional(/Extra))--!>
+=======
+>>>>>>> 53003c7b3313c1e1eafd32fc99e7e9d55895c0d4
 ## 6.4 - Find correspondences between keypoints using Brute Force matcher
 Use a Brute Force matcher to find corresponding points between the two images.
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
@@ -153,4 +156,8 @@ Use the `findHomography` and `warpPerspective` function from OpenCV.
 Consider that the book is 17.5 x 23.5 cm.
 
 https://docs.opencv.org/4.x/d9/dab/tutorial_homography.html
+<<<<<<< HEAD
 --!>
+=======
+
+>>>>>>> 53003c7b3313c1e1eafd32fc99e7e9d55895c0d4
