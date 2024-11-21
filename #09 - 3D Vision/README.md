@@ -82,4 +82,5 @@ corr[:, 1] = picked_id_target
 ```
 
 ## 9.4 - Plane segmentation in Kinect image
-Use the following code [Plane Segmentation](https://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html#Plane-segmentation) to detect and crop the main plane from the previous point cloud using the segment_plane function. Modify the segment_plane value to see the results. modify the code to make it iterative to detect the 5 main planes in the scene. 
+Use the following code [Plane Segmentation](https://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html#Plane-segmentation) to detect and crop the main plane from the previous point cloud using the segment_plane function. Modify the segment_plane value to see the results. modify the code to make it iterative to detect the 3 main planes in the scene. 
+
