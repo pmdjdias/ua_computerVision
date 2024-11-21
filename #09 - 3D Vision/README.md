@@ -56,9 +56,8 @@ The evaluated transform can be recovered with the function as the `registration_
 
 Merge the two aligned pointclouds and save the obtain pointcloud to a new file `merged_offices.ply` (use the + operator).
 
-## Optional
-Try the previous code to align the images filt_office1.pcd and filt_office2.pcd acquired with a kinect azure sensor. Is the ICP providing a good estimation of the transform? Why?
-Adapt the following code to pick at least 3 points between the two point clouds and feed the ICP algorithm with an initial transform in order to achieve a good registration.
+## Note
+If the two depth images are acquired from significantly different viewpoints, the ICP might not provide a good estimation of the transform. in this case it is possible to pick at least 3 points between the two point clouds and feed the ICP algorithm with an initial transform in order to achieve a good registration. the following code shows how to perform point selection in pointclouds.
 ```html
 def pick_points(pcd):
     print("")
