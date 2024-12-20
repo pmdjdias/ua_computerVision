@@ -118,4 +118,5 @@ Use the function cvReprojectImageTo3D to compute the 3D coordinates of the pixel
 We will use `open3CD` as well as `openCV` in the next labs. You should have a tutorial example running on your computer. Install open3D as explained in:
 http://www.open3d.org/docs/release/getting_started.html 
 Check if the installation is up and running by running some tutorials on the same page.
-Please notice that Open3D only support `python version up to 3.11` and `numpy version previous to 2.0`.
+
+Please notice that Open3D only support `python versions up to 3.11` and `numpy versions previous to 2.0`.
