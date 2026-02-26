@@ -61,7 +61,7 @@ cv2.normalize(hist_item, hist_item, 0, histImageHeight, cv2.NORM_MINMAX)
 
 # Draw the bars of the nomrmalized histogram
 for i in range (histSize):
-	cv2.rectangle(histImage,  ( i * binWidth, 0 ), ( ( i + 1 ) * binWidth, int(hist_item[i]) ), (125), -1)
+	cv2.rectangle(histImage,  ( i * binWidth, 0 ), ( ( i + 1 ) * binWidth, int(hist_item[i][0]) ), (125), -1)
 
 # ATTENTION : Y coordinate upside down
 histImage = np.flipud(histImage)
