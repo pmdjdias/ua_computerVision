@@ -3,7 +3,7 @@
 ## Outline
 * Thresholding
 * Filters: filtering and noise attenuation / removal
-# Era interessante manter aqui o Sobel Operator, nem que reduza a parte de filtragem
+<!-- Era interessante manter aqui o Sobel Operator, nem que reduza a parte de filtragem -->
 * The Canny detector: contour segmentation
 * Hough Line detection
 
