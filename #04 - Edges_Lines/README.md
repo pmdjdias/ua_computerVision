@@ -18,9 +18,11 @@ Create a new program (`aula_04_exe_01.py`) that allows applying Thresholding ope
 
 Compile and test the file `aula_04_exe_02.py`.
 Analyze the code and verify how an averaging filter is applied using the function:
-'''html
+
+```html
 dst = cv2.blur(src, ksize[, dst[, anchor[, borderType]]])
-'''
+```
+
 Write additional code allowing to:
 
 * Apply (5 × 5) and (7 × 7) averaging filters to a given image.
@@ -34,9 +36,10 @@ Use the following test images: `fce5noi3.bmp`, `fce5noi4.bmp`, `fce5noi6.bmp`, `
 
 Create a new example (`aula_04_exe_03.py`) that allows, similarly to the previous example, applying median filters to a given image.
 Use the function:
-''' html
+
+``` html
 dst = cv2.medianBlur(src, ksize[, dst])
-'''
+```
 
 Test the developed operations using the `Lena_Ruido.png` and `DETI_Ruido.png` images.
 Use the developed code to analyze the effects of applying different **median filters** to various images, and to compare the resulting images among themselves and with the original image, as well as with the results of applying **averaging filters**.
@@ -46,9 +49,10 @@ Use the same test images as before.
 
 Create a new example (`aula_04_exe_04.py`) that allows, similarly to the previous example, applying Gaussian filters to a given image.
 Use the function:
-''' html
+
+``` html
 Dst = cv2.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]])
-'''
+```
 
 Test the developed operations using the `Lena_Ruido.png` and `DETI_Ruido.png` images.
 Use the developed code to analyze the effects of applying different **Gaussian filters** to various images, and to compare the resulting images among themselves and with the original image, as well as with the results of applying **averaging filters** and **median filters**.
@@ -58,9 +62,10 @@ Use the same test images as before.
 
 Create a new example (`aula_04_exe_05.py`) that allows applies the Canny detector to a given image.
 Use the function:
-''' html
+
+``` html
 edges = cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]])
-'''
+```
 
 Note that this detector uses hysteresis and needs two threshold values: the larger value (e.g., 100) to determine “stronger” contours; the smaller value (e.g., 75) to allow identifying other contours connected to a “stronger” one.
 Test the developed operations using the `wdg2.bmp`, `lena.jpg`, `cln1.bmp` and `Bikesgray.jpg` images.
@@ -71,7 +76,7 @@ Use different threshold values: for instance, 1 and 255; 220 and 225; 1 and 128.
 
 Perform this operation not on a static image but using the feed of the camera
 
-'''html
+```html
 import cv2
 capture = cv2.VideoCapture(0)
 while (True):
@@ -82,7 +87,7 @@ while (True):
 
 capture.release()
 cv2.destroyAllWindows()
-'''
+```
 
 ## 5.6 - Hough Line detection
 
