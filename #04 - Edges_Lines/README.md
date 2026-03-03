@@ -3,22 +3,23 @@
 ## Outline
 * Thresholding
 * Filters: filtering and noise attenuation / removal
-* The Sobel operator: computing the image gradient
+# Era interessante manter aqui o Sobel Operator, nem que reduza a parte de filtragem
 * The Canny detector: contour segmentation
+* Hough Line detection
 
 [OpenCV Filtering operations](https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html) 
 
-## 4.1 - Thresholding 
+## 4.1 - Thresholding
 Create a new program (`aula_04_exe_01.py`) that allows applying Thresholding operations to gray-level images. Use the corresponding OpenCV function and create a resulting image for each one of the possible operation types: THRESH_BINARY, THRESH_BINARY_INV, THRESH_TRUNC, THRESH_TOZERO and THRESH_TOZERO_INV.
 
 ## 4.2 - Averaging Filters
 Compile and test the file `aula_04_exe_02.py`. 
 Analyze the code and verify how an averaging filter is applied using the function:
-``` html
+```html
 dst = cv2.blur(src, ksize[, dst[, anchor[, borderType]]])
 ```
 Write additional code allowing to:
-*	Apply (5 × 5) and (7 × 7) averaging filters to a given image.
+*   Apply (5 × 5) and (7 × 7) averaging filters to a given image.
 *	Apply successively (e.g., 3 times) the same filter to the resulting image.
 *	Visualize and compare the results of the successive operations.
 Test the developed operations using the `Lena_Ruido.png` and `DETI_Ruido.png` images.
@@ -60,7 +61,9 @@ Test the developed operations using the `wdg2.bmp`, `lena.jpg`, `cln1.bmp` and `
 Use different threshold values: for instance, 1 and 255; 220 and 225; 1 and 128.
 
 ## Optional
+
 Perform this operation not on a static image but using the feed of the camera
+
 ```html
 import cv2
 capture = cv2.VideoCapture(0)
@@ -74,6 +77,7 @@ capture.release()
 cv2.destroyAllWindows()
 ```
 
-## 5.6 - Hough Line detection 
+## 5.6 - Hough Line detection
+
 Implement a program to detect lines on an image of your choice. Adjust the parameters to get the best Canny edges as possible and then use the Hough Line transform to detect lines in the image.
 [Tutorial Hough Lines](https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html)

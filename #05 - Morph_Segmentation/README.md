@@ -49,7 +49,6 @@ Given the gray-level image `mon1.bmp`, carry out the following sequence of opera
 
 What happens if you use a square structuring element of size 9×9?
 
-
 ## 5.4 - Opening
 The morphological opening operation corresponds to applying an **erosion** operation followed by a **dilation** operation, using the same structuring element.
 
