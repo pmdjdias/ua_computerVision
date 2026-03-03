@@ -1,4 +1,4 @@
-# Lab 5 - Filtering, edge detection
+# Lab 4 - Filtering, edge detection
 
 ## Outline
 * Thresholding

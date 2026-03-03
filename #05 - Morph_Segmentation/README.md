@@ -1,4 +1,4 @@
-# Lab 4 - Morphological operations
+# Lab 5 - Morphological operations
 
 ## Outline
 * Morphological operations on binary images and on gray-level images
