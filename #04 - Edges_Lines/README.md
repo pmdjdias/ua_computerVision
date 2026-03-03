@@ -3,9 +3,9 @@
 ## Outline
 * Thresholding
 * Filters: filtering and noise attenuation / removal
-<!-- Era interessante manter aqui o Sobel Operator, nem que reduza a parte de filtragem -->
 * The Canny detector: contour segmentation
 * Hough Line detection
+<!-- Era interessante manter aqui o Sobel Operator, nem que reduza a parte de filtragem -->
 
 [OpenCV Filtering operations](https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html) 
 
@@ -49,7 +49,7 @@ Use the developed code to analyze the effects of applying different **Gaussian f
 Use the same test images as before.
 
 ## 4.5 - Canny detector
-Create a new example (`aula_04_exe_05.py`) that allows applyies the Canny detector to a given image.
+Create a new example (`aula_04_exe_05.py`) that allows applies the Canny detector to a given image.
 Use the function:
 ``` html
 edges = cv2.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]])
