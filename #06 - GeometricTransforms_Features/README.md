@@ -1,14 +1,17 @@
-# Lab 6 - Geometric Transformations and Feature detection 
+# Lab 6 - Geometric Transformations and Feature detection
 
 ## Outline
+
 * Affine transformation
 * Manual correspondences to evaluate affine transformation
 * Keypoint detection and matching
 * Homography transformation
 
 ## 6.1 - Affine transformations
+
 Select an image of your choice and apply rotation and translation using the OpenCV transformation operations. Note that you can easily combine scaling and rotation when defining the transformation matrix.
 You can create the rotation matrix using the following code:
+
 ```html
 rows,cols,channels  = src.shape
 M = cv2.getRotationMatrix2D((0,0),25,1)
@@ -17,6 +20,7 @@ M[0][2] = -50
 M[1][2] = 100
 print(M) 
 ```
+
 Save the image transformed after applying the function `warpAffine` with the name `imagename_tf.jpg`.
 
 Check the website from OpenCV to see other examples of possible transform:
@@ -24,6 +28,7 @@ Check the website from OpenCV to see other examples of possible transform:
 https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html
 
 ## 6.2 - Evaluation of transformation using manual selection
+
 Open the original image and the transformed image. Use the following code (replicated for each images) to select 3 corresponding points in each image in the same order.
 ```html
 def select_src(event, x, y, flags, params):
@@ -90,8 +95,10 @@ tan(\psi) = \frac{b}{a} = -\frac{c}{d}
 You may also show the result of subtracting images after warping to evaluate the correctness of the evaluated transform.
 
 ## 6.3 - Find keypoints in both Images using the SIFT algorithm 
+
 Use SIFT (Scale-Invariant Feature Transform) to detect points of interest in the original and transformed image.
 You may use the following code:
+
 ```html
 # Initiate SIFT detector
 sift = cv2.SIFT_create()
@@ -106,6 +113,7 @@ More information in:
 https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html
 
 ## 6.4 - Find correspondences between keypoints using Brute Force matcher
+
 Use a Brute Force matcher to find corresponding points between the two images.
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 ```html
@@ -133,6 +141,7 @@ dst_pts = np.float32([ kp2[m.trainIdx].pt for m in matches ]).reshape(-1,1,2)
 Modify the number of matches to consider and see its impact.
 
 ## 6.5 - Evaluation of transformation with automatic selection
+
 Use the correspondences from the brute matcher to evaluate again the transform between the two images as in question 6.2. Do not forget the conversion numpy array.
 ```html
 # Conversion to np array
@@ -145,6 +154,7 @@ Optional: you may use other strategies (for example the FLANN based Matcher) to 
 https://docs.opencv.org/4.x/dc/dc3/tutorial_py_matcher.html
 
 ## 6.6 - Homography estimation 	
+
 Consider the images `homography_1.jpg` to `homography_4.jpg`. 
 These are images taken from a book from different viewpoints such that the image is suffering an homography transform.
 Adapt the code of the previous exercises to select manually the corners of the book in the image and evaluate/correct the homography.
