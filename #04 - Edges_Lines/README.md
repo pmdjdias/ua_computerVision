@@ -60,8 +60,8 @@ Use the same test images as before.
 
 ## 4.5 - Canny detector
 
-Analyse the code (`aula_04_exe_05.py`) that aply the Sobel operator to detect horizontal edges.
-Modify the code to apply the Canny detector to a given image.
+Analyse the code (`aula_04_exe_05.py`) that aply the Sobel operator to detect horizontal edges. Modify the code to use the vertical kernel and see the difference.
+Now replace the Sobel code to apply the Canny detector to a given image.
 Use the function:
 
 ``` html
