@@ -84,7 +84,7 @@ s_y=sign(d)\sqrt{c^2+d^2}\\
 
 and
 $`
-tan(\psi) = \frac{b}{a} = \frac{-c}{d}
+tan(\psi) = \frac{b}{a}
 `$
  
 You may also show the result of subtracting images after warping to evaluate the correctness of the evaluated transform.
