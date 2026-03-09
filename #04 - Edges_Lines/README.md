@@ -91,7 +91,7 @@ capture.release()
 cv2.destroyAllWindows()
 ```
 
-## 5.6 - Hough Line detection
+## 4.6 - Hough Line detection
 
 Implement a program to detect lines on an image of your choice. Adjust the parameters to get the best Canny edges as possible and then use the Hough Line transform to detect lines in the image.
 [Tutorial Hough Lines](https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html)
