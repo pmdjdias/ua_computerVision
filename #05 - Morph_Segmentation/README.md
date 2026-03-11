@@ -15,7 +15,7 @@ When applied to binary images, the morphological dilation operation expands the 
 Given the gray-level image `wdg2.bmp`, create a new program (`aula_05_exe_01.py`) carrying out the following sequence of operations:
 * Conversion to a binary image, with threshold 120.
 *	Inversion of the resulting image (i.e., obtaining the negative image).
-*	Dilation of the negative image using a circular structuring element, with a diameter of 11 pixels.
+*	Dilation (cv.dilate) of the negative image using a circular structuring element (cv.getStructuringElement), with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the dilation operation using the same structuring element?
 Now, use a square structuring element, of size 11×11. Repeatedly apply the dilation operation. What differences do you notice? 
@@ -27,7 +27,7 @@ Given the gray-level image `wdg2.bmp`, carry out the following sequence of opera
 
 *	Conversion to a binary image, with threshold 120.
 *	Inversion of the resulting image (i.e., obtaining the negative image).
-*	Erosion of the negative image using a circular structuring element, with a diameter of 11 pixels.
+*	Erosion (cv.erode) of the negative image using a circular structuring element, with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the erosion operation using the same structuring element?
 Now, use a square structuring element, of size 11×11. Repeatedly apply the erosion operation. What differences do you notice? 
