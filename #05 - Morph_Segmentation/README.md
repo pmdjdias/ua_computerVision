@@ -31,6 +31,7 @@ Given the gray-level image `wdg2.bmp`, carry out the following sequence of opera
 *	Erosion (cv.erode) of the negative image using a circular structuring element, with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the erosion operation using the same structuring element?
+
 Now, use a square structuring element, of size 11×11. Repeatedly apply the erosion operation. What differences do you notice? 
 
 <!--The morphological erosion has directional effects, when using non-symmetrical structuring elements.-->
