@@ -18,6 +18,7 @@ Given the gray-level image `wdg2.bmp`, create a new program (`aula_05_exe_01.py`
 *	Dilation (cv.dilate) of the negative image using a circular structuring element (cv.getStructuringElement), with a diameter of 11 pixels.
 
 What happens if you repeatedly apply the dilation operation using the same structuring element?
+
 Now, use a square structuring element, of size 11×11. Repeatedly apply the dilation operation. What differences do you notice? 
 
 ## 5.2 - Binary images — Erosion
