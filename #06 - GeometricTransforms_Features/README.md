@@ -39,7 +39,7 @@ def select_src(event, x, y, flags, params):
         cv2.putText(src,str(len(srcPts)), (x+10,y+10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0))
         cv2.imshow("orginal", src)
 ```
-After the selection, use the function `getAffineTransform` to estimate the transformation between the two images. Notice that this function only accepts 3 points as entry.
+After the selection, use the function `estimateAffine2D` to estimate the transformation between the two images. Notice that this function only accepts 3 points as entry.
 You need to convert the points to feed the getAffineTransform function:
 ```html
 np_srcPts = np.array(srcPts).astype(np.float32)
