@@ -65,8 +65,8 @@ c & d & ty
 \quad
 \begin{bmatrix}
 \begin{array}{cc} 
-s_x cos\psi & -s_x sin\psi & x_c\\
-s_y sin\psi & s_y cos\psi & y_c
+s_x cos\psi & -s_y sin\psi & x_c\\
+s_x sin\psi & s_y cos\psi & y_c
 \end{array}
 \end{bmatrix} 
 `$
