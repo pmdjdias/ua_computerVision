@@ -65,8 +65,8 @@ c & d & ty
 \quad
 \begin{bmatrix}
 \begin{array}{cc} 
-s_x cos\psi & -s_y sin\psi & x_c\\
-s_x sin\psi & s_y cos\psi & y_c
+s_x cos\psi & -s_x sin\psi & x_c\\
+s_y sin\psi & s_y cos\psi & y_c
 \end{array}
 \end{bmatrix} 
 `$
@@ -82,14 +82,14 @@ t_y = y_c
 
 $`
 \begin{split}
-s_x=sign(a)\sqrt{a^2+c^2}\\
-s_y=sign(d)\sqrt{b^2+d^2}\\
+s_x=sign(a)\sqrt{a^2+b^2}\\
+s_y=sign(d)\sqrt{c^2+d^2}\\
 \end{split}
 `$
 
 and
 $`
-tan(\psi) = \frac{b}{a} = \frac{-c}{d}
+tan(\psi) = \frac{-b}{a} = \frac{c}{d}
 `$
  
 You may also show the result of subtracting images after warping to evaluate the correctness of the evaluated transform.
