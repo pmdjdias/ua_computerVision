@@ -82,8 +82,8 @@ t_y = y_c
 
 $`
 \begin{split}
-s_x=sign(a)\sqrt{a^2+b^2}\\
-s_y=sign(d)\sqrt{c^2+d^2}\\
+s_x=sign(a)\sqrt{a^2+c^2}\\
+s_y=sign(d)\sqrt{b^2+d^2}\\
 \end{split}
 `$
 
