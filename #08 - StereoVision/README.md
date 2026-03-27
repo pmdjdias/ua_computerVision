@@ -56,7 +56,7 @@ cv2.setMouseCallback("Window", mouse_handler)
 
 Start by adding a callback to each window and writing down the coordinates of the selected pixel. Do not forget to add a `cvWaitKey(-1)` at the end of the program.
 
-Use the function `computeCorrespondEpilines` to draw the corresponding epipolar line for each selected point (use `cvLine`). The epipolar line of points in the left image should be drawn in right image and vice versa. To compute the epipolar lines, use the fundamental matrix estimated during the stereo calibration. Note that the function computeCorrespondEpilines returns the 3 coefficients (a,b,c) of the corresponding epipolar line for a given point define as ax+by+c=0.
+Use the function `computeCorrespondEpilines` to draw the corresponding epipolar line for each selected point (use `cvLine`). The epipolar line of points in the left image should be drawn in the right image and vice versa. To compute the epipolar lines, use the fundamental matrix estimated during the stereo calibration. Note that the function computeCorrespondEpilines returns the 3 coefficients (a,b,c) of the corresponding epipolar line for a given point define as ax+by+c=0.
 
 You may use the following code to access the point coordinates and compute the epiline:
 ```html
@@ -73,8 +73,8 @@ color = np.random.randint(0, 255, 3).tolist()
 
 Select a pair of stereo images and use the following OpenCV functions to generate the rectified images (corresponding epipolar lines in the same rows in both images):
 	`cvStereoRectify`: this function computes the rotation and projection matrices that transform both camera image plane into the same image plane, and thus with parallel epipolar lines. The size of the output matrices R1, R2, P1, P2 is respectively 3x3 and 3x4.
-	`cvinitUndistortRectifyMap`: This function computes the transformation (undistortion and rectification) between the original image and the rectified image. The output arrays mx1 and mx2 are a direct map between the two images, for each pixel in the rectified image, it maps the corresponding pixel in the original image.
-	`cvRemap`: apply the transformation between two images using the provided map of x/y coordinates.
+	`cvinitUndistortRectifyMap`: This function computes the transformation (undistortion and rectification) between the original image and the rectified image. The output arrays mx1 and mx2 are a direct map between the two images: for each pixel in the rectified image, it maps the corresponding pixel in the original image.
+	`cvRemap`: apply the transformation between two images using the provided map of x,y coordinates.
 The several matrices to be used can be defined as:	
 ```html
 R1 = np.zeros(shape=(3,3))
@@ -102,32 +102,35 @@ Modify the code to make it interactive as in the Epipolar Line section. By click
 
 ## 8.6 - Disparity Map 
 
-Use the class `StereoBM` and the function that implements a block matching technique (template matching will be explored later within this Computer Vision course) to find correspondences over two rectified stereo images. Use the parameters specified as follow since we will not enter in details of these functions. Be careful to use gray level rectified images for the correspondence algorithm. You might modify the Stereo Matching parameters or even try other methods (for example `StereoSGBM_create`). 
+Use the class `StereoBM` and the function that implements a block matching technique (template matching will be explored later within this Computer Vision course) to find correspondences over two rectified stereo images along epipolar lines. Use the parameters specified as follow since we will not enter in details of these functions. Be careful to use gray level rectified images for the correspondence algorithm. You might modify the Stereo Matching parameters or even try other methods (for example `StereoSGBM_create`). 
 Note: you need to perform a conversion to an 8 bits grey level image to display the disparity map.
 ```html
 # Call the constructor for StereoBM
-stereo = cv2.StereoBM_create(numDisparities=16*5, blockSize=21)
+stereo = cv2.StereoBM_create(numDisparities=16*10, blockSize=21)
 
 # Calculate the disparity image
 disparity = stereo.compute(remap_imgl,remap_imgr)
 
 # -- Display  as a CV_8UC1 image
-disparity = cv2.normalize(src=disparity, dst=disparity, beta=0, alpha=255, norm_type=cv2.NORM_MINMAX);
-disparity = np.uint8(disparity)
+disp_8UC1 = cv2.normalize(src=disparity, dst=disp_8UC1, beta=0, alpha=255, norm_type=cv2.NORM_MINMAX);
+disp_8UC1 = np.uint8(disp_8UC1)
+
+# Adjust this scaling factor based on the stereo method used
+disparity_map = disparity.astype(np.float32) / 16.0
 
 cv2.imshow("left", left)
-cv2.imshow('Disparity Map', disparity)
+cv2.imshow('Disparity Map', disp_8UC1)
 cv2.waitKey()
 ```
 
 ## 8.7 - 3D Reconstruction
 
-Use the function cvReprojectImageTo3D to compute the 3D coordinates of the pixels in the disparity map. The parameters of cvReprojectImageTo3D are the disparity map (`disp` in previous exercise), and the matrix Q given by the function `cvStereoRectify`. Save the 3D coordinates in a npz file.
+Use the function cvReprojectImageTo3D to compute the 3D coordinates of the pixels in the disparity map. The parameters of cvReprojectImageTo3D are the disparity map (`disparity_map` in previous exercise), and the matrix Q given by the function `cvStereoRectify`. Save the 3D coordinates in a npz file.
 
 ## Open3D installation (homework)
 
-We will use `open3CD` as well as `openCV` in the next labs. You should have a tutorial example running on your computer. Install open3D as explained in:
+We will use `open3D` as well as `openCV` in the next labs. You should have a tutorial example running on your computer. Install open3D as explained in:
 http://www.open3d.org/docs/release/getting_started.html 
 Check if the installation is up and running by running some tutorials on the same page.
 
-Please notice that Open3D only support `python versions up to 3.11` and `numpy versions previous to 2.0`.
+Please notice that Open3D may only support previous versions of python and numpy (last tested: `python versions up to 3.11` and `numpy versions previous to 2.0`).
